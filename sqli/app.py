@@ -31,8 +31,7 @@ def init(argv):
     app['config'] = config
 
     setup_jinja(app, loader=PackageLoader('sqli', 'templates'),
-                context_processors=[csrf_processor, auth_user_processor],
-                autoescape=False)
+                context_processors=[csrf_processor, auth_user_processor])
     setup_database(app)
     setup_redis(app)
     setup_routes(app)
